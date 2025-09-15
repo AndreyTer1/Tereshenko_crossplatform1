@@ -1,10 +1,13 @@
 ﻿@model Tereshenko_crossplatform1.Models.Tereshenko_Car
-<h1>Детали машины</h1>
 
-<p>Марка: @Model.Make</p>
-<p>Модель: @Model.Model</p>
-<p>Год: @Model.Year</p>
-<p>Цена: @Model.Price</p>
+<div class="container">
+    <h1>Детали машины</h1>
 
-<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-<a asp-action="Index">Back</a>
+    <p><strong>Марка:</strong> @Model.Make</p>
+    <p><strong>Модель:</strong> @Model.Model</p>
+    <p><strong>Год:</strong> @Model.Year</p>
+    <p><strong>Цена:</strong> @Model.Price</p>
+
+    <a class="btn btn-edit" asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a>
+    <a class="btn btn-add" asp-action="Index">Назад</a>
+</div>

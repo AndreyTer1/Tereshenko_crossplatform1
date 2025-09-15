@@ -1,26 +1,37 @@
 ﻿@model IEnumerable<Tereshenko_crossplatform1.Models.Tereshenko_Car>
-<h1>Список машин</h1>
 
-<p><a asp-action="Create">Добавить машину</a></p>
+<div class="container">
+    <h1>Список машин</h1>
 
-<table class="table">
-    <thead>
-        <tr><th>Make</th><th>Model</th><th>Year</th><th>Price</th><th>Действия</th></tr>
-    </thead>
-    <tbody>
-        @foreach (var c in Model)
-        {
+    <p>
+        <a class="btn btn-add" asp-action="Create">Добавить машину</a>
+    </p>
+
+    <table>
+        <thead>
             <tr>
-                <td>@c.Make</td>
-                <td>@c.Model</td>
-                <td>@c.Year</td>
-                <td>@c.Price</td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@c.Id">Details</a> |
-                    <a asp-action="Edit" asp-route-id="@c.Id">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@c.Id">Delete</a>
-                </td>
+                <th>Марка</th>
+                <th>Модель</th>
+                <th>Год</th>
+                <th>Цена</th>
+                <th>Действия</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <td>@c.Make</td>
+                    <td>@c.Model</td>
+                    <td>@c.Year</td>
+                    <td>@c.Price</td>
+                    <td>
+                        <a class="btn btn-edit" asp-action="Details" asp-route-id="@c.Id">Details</a>
+                        <a class="btn btn-edit" asp-action="Edit" asp-route-id="@c.Id">Edit</a>
+                        <a class="btn btn-delete" asp-action="Delete" asp-route-id="@c.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
