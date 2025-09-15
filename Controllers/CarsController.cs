@@ -53,7 +53,7 @@ namespace Tereshenko_crossplatform1.Controllers
         // UPDATE: POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Make,Model,Year,Price")] Car car)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Make,Model,Year,Price")] Tereshenko_Car car)
         {
             if (id != car.Id) return BadRequest();
             if (!ModelState.IsValid) return View(car);
