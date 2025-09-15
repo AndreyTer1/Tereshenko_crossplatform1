@@ -1,0 +1,12 @@
+﻿@model Tereshenko_crossplatform1.Models.Tereshenko_Car
+<h1>Редактировать машину</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <p>Марка: <input asp-for="Make" /></p>
+    <p>Модель: <input asp-for="Model" /></p>
+    <p>Год: <input asp-for="Year" /></p>
+    <p>Цена: <input asp-for="Price" /></p>
+    <button type="submit">Сохранить</button>
+</form>
+<a asp-action="Index">Назад</a>

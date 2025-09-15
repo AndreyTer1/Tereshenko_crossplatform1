@@ -1,0 +1,12 @@
+﻿@model Tereshenko_crossplatform1.Models.Tereshenko_Car
+<h1>Удалить машину</h1>
+
+<p>Марка: @Model.Make</p>
+<p>Модель: @Model.Model</p>
+<p>Год: @Model.Year</p>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Удалить</button>
+</form>
+<a asp-action="Index">Отмена</a>

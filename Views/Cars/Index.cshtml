@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Tereshenko_crossplatform1.Models.Tereshenko_Car>
+<h1>Список машин</h1>
+
+<p><a asp-action="Create">Добавить машину</a></p>
+
+<table class="table">
+    <thead>
+        <tr><th>Make</th><th>Model</th><th>Year</th><th>Price</th><th>Действия</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Make</td>
+                <td>@c.Model</td>
+                <td>@c.Year</td>
+                <td>@c.Price</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@c.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@c.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@c.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
